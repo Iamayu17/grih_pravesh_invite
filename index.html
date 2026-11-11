@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>गृह प्रवेश निमंत्रण – संजय कुमार एवं परिवार</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF6E6; --bg2:#FBE9C8; --card:#FFFBF2; --ink:#4A1022; --maroon:#8E1B3A; --gold:#D9962B; --gold2:#F2C566; --line:#E8C98A; --muted:#7A4A56;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#2A0A16; --bg2:#38101F; --card:#3F1424; --ink:#FFEFD2; --maroon:#F0B4C0; --gold:#F2C566; --gold2:#D9962B; --line:#6B3A2A; --muted:#E5C3B0;}
+}
+:root[data-theme="dark"]{--bg:#2A0A16; --bg2:#38101F; --card:#3F1424; --ink:#FFEFD2; --maroon:#F0B4C0; --gold:#F2C566; --gold2:#D9962B; --line:#6B3A2A; --muted:#E5C3B0;}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:'Hind',system-ui,sans-serif;font-size:18px;line-height:1.7;overflow-x:hidden}
+body.locked{overflow:hidden}
+h1,h2,h3,.disp{font-family:'Yatra One','Hind',serif;font-weight:400;line-height:1.25}
+section{padding:72px 20px;max-width:760px;margin:0 auto;text-align:center}
+.band{background:linear-gradient(180deg,var(--bg2),var(--bg));max-width:none}
+.band>.in{max-width:760px;margin:0 auto}
+.rule{display:flex;align-items:center;gap:12px;justify-content:center;color:var(--gold);margin:18px auto;max-width:360px}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule::after{transform:scaleX(-1)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Gate */
+#gate{position:fixed;inset:0;z-index:50;display:flex;pointer-events:auto}
+#gate .door{flex:1;background:linear-gradient(160deg,#7a1230,#a8264a);transition:transform 1.4s cubic-bezier(.7,0,.2,1);position:relative;overflow:hidden}
+#gate .door::after{content:"";position:absolute;inset:14px;border:2px solid var(--gold2);border-radius:6px;opacity:.7}
+#gate .l{border-right:2px solid var(--gold2)}
+#gate .r{border-left:2px solid var(--gold2)}
+#gate.open .l{transform:translateX(-101%)}
+#gate.open .r{transform:translateX(101%)}
+#gate .seal{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#FFF1D0;text-align:center;padding:20px;transition:opacity .5s}
+#gate.open .seal{opacity:0;pointer-events:none}
+.seal .om{font-family:'Yatra One';font-size:84px;line-height:1;color:var(--gold2);text-shadow:0 0 30px rgba(242,197,102,.5)}
+.seal p{font-size:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 17px 'Hind',sans-serif;padding:13px 26px;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#4A1022;box-shadow:0 6px 18px rgba(217,150,43,.4)}
+.btn.red{background:linear-gradient(135deg,#a8264a,#7a1230);color:#FFF1D0;box-shadow:0 6px 18px rgba(122,18,48,.35)}
+.btn.ghost{background:transparent;color:var(--maroon);border:2px solid var(--gold)}
+
+/* Hero */
+#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding-top:40px;max-width:none;background:radial-gradient(ellipse at 50% 0%,var(--bg2),var(--bg) 70%)}
+.shri{color:var(--gold);letter-spacing:.04em;font-size:17px}
+.bells{display:flex;justify-content:space-between;width:min(560px,100%);margin-top:-6px}
+.bell{width:34px;transform-origin:top center;animation:sway 3.6s ease-in-out infinite}
+.bell:nth-child(2){animation-delay:-1.8s}
+@keyframes sway{0%,100%{transform:rotate(7deg)}50%{transform:rotate(-7deg)}}
+.lead{max-width:30ch;margin:8px auto 0;color:var(--muted)}
+.title{font-size:clamp(64px,17vw,128px);color:var(--maroon);margin:10px 0 0;text-shadow:0 3px 0 rgba(217,150,43,.3)}
+.sub{font-size:clamp(19px,4.6vw,24px);max-width:22ch;margin:6px auto 0}
+.house{width:min(360px,80vw);margin:26px auto 0;display:block;filter:drop-shadow(0 14px 22px rgba(74,16,34,.25))}
+.win{animation:glow 3s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.7}to{opacity:1}}
+.cue{margin-top:18px;color:var(--gold);font-size:14px;animation:bob 1.8s infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* Date cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.dcard{background:var(--card);border:2px solid var(--line);border-radius:26px;padding:22px 12px;box-shadow:0 8px 24px rgba(142,27,58,.08)}
+.dcard svg{width:44px;height:44px;margin:0 auto 6px;display:block}
+.dcard small{display:block;color:var(--muted);font-size:16px}
+.dcard b{font-family:'Yatra One';font-weight:400;font-size:clamp(20px,5vw,28px);color:var(--maroon);display:block;line-height:1.3}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:30px auto 8px;max-width:420px}
+.count div{background:linear-gradient(160deg,#8E1B3A,#6d1029);color:#FFF1D0;border-radius:18px;padding:12px 4px}
+.count b{display:block;font:400 32px 'Yatra One';line-height:1.1;color:var(--gold2)}
+.count span{font-size:14px}
+#cdMsg{font-size:19px;color:var(--maroon);margin-top:6px}
+
+/* Message + hosts */
+.quote{font-family:'Yatra One';font-size:clamp(25px,6vw,36px);color:var(--maroon);line-height:1.5;max-width:20ch;margin:0 auto}
+.ribbon{display:inline-block;background:linear-gradient(135deg,#a8264a,#7a1230);color:#FFF1D0;font:400 28px 'Yatra One';padding:6px 46px;clip-path:polygon(0 50%,8% 0,92% 0,100% 50%,92% 100%,8% 100%);margin-bottom:14px}
+.host{font-size:clamp(30px,8vw,48px);color:var(--ink)}
+.phone{display:inline-flex;align-items:center;gap:10px;margin-top:14px;font:400 clamp(28px,7vw,40px) 'Yatra One';color:var(--maroon);text-decoration:none}
+.phone i{width:44px;height:44px;border-radius:50%;background:var(--maroon);display:grid;place-items:center}
+.phone svg{width:22px;height:22px;fill:var(--bg)}
+
+/* Address + map */
+.addr{background:var(--card);border:2px solid var(--line);border-radius:26px;padding:24px 20px;margin-top:22px}
+.addr h3{font-size:22px;color:var(--maroon)}
+.addr .nm{font:600 22px 'Hind';margin-top:6px}
+.addr p{margin-top:4px}
+.acts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+.map{position:relative;height:340px;border-radius:26px;overflow:hidden;margin-top:22px;border:3px solid var(--gold);background:repeating-linear-gradient(45deg,var(--bg2) 0 14px,var(--card) 14px 28px);box-shadow:0 12px 30px rgba(142,27,58,.15)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--maroon)}
+
+/* Footer */
+footer{background:linear-gradient(180deg,var(--bg),#7a1230 140%);padding:70px 20px calc(50px + env(safe-area-inset-bottom,0px));text-align:center;max-width:none}
+footer .quote{max-width:22ch}
+footer small{display:block;margin-top:26px;color:var(--muted)}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bell,.cue,.win{animation:none}#gate .door{transition:none}html{scroll-behavior:auto}}
+@media (max-width:480px){.cards{gap:10px}.map{height:300px}}
+</style>
+</head>
+<body class="locked">
+
+<!-- Gate -->
+<div id="gate" role="dialog" aria-label="निमंत्रण खोलें">
+  <div class="door l"></div><div class="door r"></div>
+  <div class="seal">
+    <div class="om">ॐ</div>
+    <h2 class="disp" style="font-size:30px">श्री गणेशाय नमः</h2>
+    <p>आपके लिए एक विशेष निमंत्रण</p>
+    <button class="btn gold" id="enter" type="button">द्वार खोलें</button>
+  </div>
+</div>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="shri">॥ श्री गणेशाय नमः ॥</div>
+  <div class="bells" aria-hidden="true">
+    <svg class="bell" viewBox="0 0 40 70"><line x1="20" y1="0" x2="20" y2="26" stroke="#D9962B" stroke-width="2"/><path d="M6 58c0-18 6-30 14-30s14 12 14 30z" fill="#E8A93A" stroke="#B87A18" stroke-width="2"/><circle cx="20" cy="62" r="4" fill="#B87A18"/></svg>
+    <svg class="bell" viewBox="0 0 40 70"><line x1="20" y1="0" x2="20" y2="26" stroke="#D9962B" stroke-width="2"/><path d="M6 58c0-18 6-30 14-30s14 12 14 30z" fill="#E8A93A" stroke="#B87A18" stroke-width="2"/><circle cx="20" cy="62" r="4" fill="#B87A18"/></svg>
+  </div>
+  <p class="lead">स्नेह, शुभकामनाओं और खुशियों के साथ हमारे नए घर में गृह प्रवेश का शुभ अवसर आया है।</p>
+  <h1 class="title">गृह प्रवेश</h1>
+  <p class="sub">के शुभ अवसर पर आप सपरिवार सादर आमंत्रित हैं।</p>
+  <svg class="house" viewBox="0 0 360 250" role="img" aria-label="नया घर">
+    <ellipse cx="180" cy="236" rx="160" ry="10" fill="#4A1022" opacity=".15"/>
+    <path d="M40 110L180 30l140 80z" fill="#D9962B"/><path d="M60 110L180 42l120 68z" fill="#E8A93A"/>
+    <rect x="62" y="110" width="236" height="122" fill="#FFFBF2" stroke="#E8C98A" stroke-width="2"/>
+    <rect x="62" y="110" width="236" height="14" fill="#8E1B3A"/>
+    <rect x="86" y="140" width="62" height="58" rx="4" fill="#FFD98A" class="win"/>
+    <rect x="212" y="140" width="62" height="58" rx="4" fill="#FFD98A" class="win" style="animation-delay:-1.4s"/>
+    <line x1="117" y1="140" x2="117" y2="198" stroke="#B87A18" stroke-width="2"/><line x1="243" y1="140" x2="243" y2="198" stroke="#B87A18" stroke-width="2"/>
+    <rect x="156" y="158" width="48" height="74" rx="24 24 0 0" fill="#8E1B3A"/><circle cx="194" cy="198" r="3" fill="#F2C566"/>
+    <rect x="174" y="76" width="12" height="12" fill="#8E1B3A"/>
+    <path d="M20 232h320" stroke="#8E1B3A" stroke-width="3"/>
+    <g fill="#E8A93A"><circle cx="40" cy="226" r="7"/><circle cx="54" cy="228" r="6"/><circle cx="320" cy="226" r="7"/><circle cx="306" cy="228" r="6"/></g>
+  </svg>
+  <div class="cue" aria-hidden="true">नीचे स्क्रॉल करें ▾</div>
+</section>
+
+<!-- Date & time -->
+<section class="band" id="when"><div class="in">
+  <h2 class="disp rv" style="font-size:34px;color:var(--maroon)">शुभ तिथि एवं समय</h2>
+  <div class="rule rv">❁</div>
+  <div class="cards rv">
+    <div class="dcard">
+      <svg viewBox="0 0 48 48" fill="none" stroke="#8E1B3A" stroke-width="3" aria-hidden="true"><rect x="6" y="9" width="36" height="33" rx="6"/><path d="M6 20h36M16 5v8M32 5v8"/><g fill="#8E1B3A" stroke="none"><circle cx="16" cy="28" r="2"/><circle cx="24" cy="28" r="2"/><circle cx="32" cy="28" r="2"/><circle cx="16" cy="35" r="2"/><circle cx="24" cy="35" r="2"/></g></svg>
+      <small>दिनांक</small><b>25 नवम्बर 2026</b><small>(बुधवार)</small>
+    </div>
+    <div class="dcard">
+      <svg viewBox="0 0 48 48" fill="none" stroke="#8E1B3A" stroke-width="3" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M24 12v13l9 5" stroke-linecap="round"/></svg>
+      <small>समय</small><b>शाम 7 बजे से</b><small>&nbsp;</small>
+    </div>
+  </div>
+  <div class="count rv" id="count" aria-live="off">
+    <div><b id="d">--</b><span>दिन</span></div><div><b id="h">--</b><span>घंटे</span></div><div><b id="m">--</b><span>मिनट</span></div><div><b id="s">--</b><span>सेकंड</span></div>
+  </div>
+  <p id="cdMsg" class="rv">शुभ घड़ी की प्रतीक्षा…</p>
+  <div class="acts rv"><a class="btn ghost" id="cal" target="_blank" rel="noopener">📅 कैलेंडर में जोड़ें</a></div>
+</div></section>
+
+<!-- Message -->
+<section>
+  <div class="rule rv">✿</div>
+  <p class="quote rv">आपकी उपस्थिति हमारे लिए मंगलमय और हर्ष का विषय होगी।</p>
+  <div class="rule rv">✿</div>
+</section>
+
+<!-- Hosts -->
+<section class="band" id="host"><div class="in">
+  <div class="ribbon rv">सादर,</div>
+  <h2 class="host rv">संजय कुमार एवं परिवार</h2>
+  <a class="phone rv" href="tel:+918055399850" aria-label="संजय कुमार को कॉल करें">
+    <i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg></i>8055399850
+  </a>
+</div></section>
+
+<!-- Address + map -->
+<section id="where">
+  <h2 class="disp rv" style="font-size:34px;color:var(--maroon)">पता – नया घर 🏡</h2>
+  <div class="addr rv">
+    <p class="nm">Sanjay Kumar</p>
+    <p id="addrText">Plot no - 45, Hanuman Nagar, NIT Garden,<br>Godhani Road, near Ganpati Nagar, Nagpur,<br>Maharashtra – PIN 440030</p>
+    <div class="acts">
+      <a class="btn red" id="open" target="_blank" rel="noopener">📍 Google Maps में खोलें</a>
+      <button class="btn ghost" id="copy" type="button">पता कॉपी करें</button>
+    </div>
+    <p id="copyMsg" style="min-height:1.7em;color:var(--maroon);font-size:16px" role="status"></p>
+  </div>
+  <div class="map rv">
+    <div class="ph"><span>📍 Hanuman Nagar, Nagpur</span></div>
+    <iframe id="mapFrame" title="घर का स्थान – Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  </div>
+  <p class="rv" style="margin-top:14px;color:var(--muted);font-size:16px">आइए, हमारे नए घर की खुशियों का हिस्सा बनें…</p>
+</section>
+
+<!-- RSVP -->
+<section class="band" id="rsvp"><div class="in">
+  <h2 class="disp rv" style="font-size:34px;color:var(--maroon)">क्या आप आएँगे?</h2>
+  <p class="rv" style="margin-top:8px;color:var(--muted)">अपना नाम लिखें और WhatsApp पर हमें बताएँ।</p>
+  <div class="rv" style="margin-top:20px;display:grid;gap:12px;max-width:380px;margin-inline:auto">
+    <input id="guest" type="text" placeholder="आपका नाम" aria-label="आपका नाम" style="font:inherit;padding:13px 18px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);text-align:center">
+    <input id="num" type="number" min="1" max="30" placeholder="कितने लोग आएँगे?" aria-label="कितने लोग आएँगे" style="font:inherit;padding:13px 18px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);text-align:center">
+    <a class="btn red" id="wa" target="_blank" rel="noopener">✔ हम आएँगे</a>
+    <a class="btn ghost" id="share" target="_blank" rel="noopener">निमंत्रण साझा करें</a>
+  </div>
+</div></section>
+
+<footer>
+  <div class="disp rv" style="font-size:54px;color:var(--gold2)">ॐ</div>
+  <p class="quote rv" style="color:#FFF1D0">आपका आना हमारे लिए सौभाग्य की बात है।</p>
+  <p class="rv disp" style="color:var(--gold2);font-size:24px;margin-top:18px">संजय कुमार एवं परिवार</p>
+  <small class="rv" style="color:#E9C9B5">© गृह प्रवेश 2026 · नागपुर</small>
+</footer>
+
+<script>
+(function(){
+  var q="Plot 45, Hanuman Nagar, NIT Garden, Godhani Road, Nagpur, Maharashtra 440030";
+  var mapUrl="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+  document.getElementById('open').href=mapUrl;
+  document.getElementById('mapFrame').src="https://maps.google.com/maps?q="+encodeURIComponent(q)+"&output=embed";
+
+  // Gate
+  var gate=document.getElementById('gate');
+  document.getElementById('enter').addEventListener('click',function(){
+    gate.classList.add('open');document.body.classList.remove('locked');
+    setTimeout(function(){gate.style.display='none'},1500);
+  });
+
+  // Reveal on scroll
+  var items=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    items.forEach(function(el,i){el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+  } else items.forEach(function(el){el.classList.add('in')});
+
+  // Countdown to 25 Nov 2026, 7 PM IST
+  var target=new Date('2026-11-25T19:00:00+05:30').getTime();
+  function pad(n){return n<10?'0'+n:''+n}
+  function tick(){
+    var diff=target-Date.now();
+    if(diff<=0){['d','h','m','s'].forEach(function(id){document.getElementById(id).textContent='00'});
+      document.getElementById('cdMsg').textContent=diff>-86400000?'आज शुभ दिन है! पधारिए 🙏':'पधारने के लिए धन्यवाद 🙏';return}
+    var t=Math.floor(diff/1000);
+    document.getElementById('d').textContent=pad(Math.floor(t/86400));
+    document.getElementById('h').textContent=pad(Math.floor(t%86400/3600));
+    document.getElementById('m').textContent=pad(Math.floor(t%3600/60));
+    document.getElementById('s').textContent=pad(t%60);
+    document.getElementById('cdMsg').textContent='गृह प्रवेश में शेष समय';
+  }
+  tick();setInterval(tick,1000);
+
+  // Calendar (7 PM IST = 13:30 UTC)
+  document.getElementById('cal').href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("गृह प्रवेश – संजय कुमार एवं परिवार")+"&dates=20261125T133000Z/20261125T163000Z&location="+encodeURIComponent(q)+"&details="+encodeURIComponent("गृह प्रवेश समारोह। संपर्क: 8055399850");
+
+  // Copy address
+  document.getElementById('copy').addEventListener('click',function(){
+    var msg=document.getElementById('copyMsg');
+    function ok(){msg.textContent='पता कॉपी हो गया ✔'}
+    function fail(){msg.textContent='कॉपी नहीं हो सका, कृपया पता चुनकर कॉपी करें।'}
+    try{navigator.clipboard.writeText(q).then(ok,fail)}catch(e){fail()}
+  });
+
+  // RSVP + share
+  var wa=document.getElementById('wa');
+  function upd(){
+    var n=document.getElementById('guest').value.trim()||'हम';
+    var c=document.getElementById('num').value;
+    var t="नमस्ते संजय जी 🙏 "+n+(c?" ("+c+" लोग)":"")+" 25 नवम्बर 2026 को आपके गृह प्रवेश समारोह में अवश्य पधारेंगे।";
+    wa.href="https://wa.me/918055399850?text="+encodeURIComponent(t);
+  }
+  document.getElementById('guest').addEventListener('input',upd);
+  document.getElementById('num').addEventListener('input',upd);upd();
+  document.getElementById('share').href="https://wa.me/?text="+encodeURIComponent("🏡 गृह प्रवेश निमंत्रण\nसंजय कुमार एवं परिवार\n📅 25 नवम्बर 2026 (बुधवार), शाम 7 बजे से\n📍 "+q+"\n📞 8055399850\n\nMap: "+mapUrl);
+})();
+</script>
+</body>
+</html>
